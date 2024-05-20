@@ -1,0 +1,131 @@
+/* Importar la fuente Space Mono */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+:root {
+  --font-family: "Space Mono", monospace;
+  --font-size: 16px;
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-welcome-text: #e5e5e5;
+  --color-bg: #121212;
+  --color-primary: transparent;
+  --color-secondary: #53fc18;
+  --color-border: #666;
+  --color-button-text: #ffffff;
+  --color-button-text-hover: #000;
+  --color-button: #b2aeae;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 16px;
+  margin: auto;
+}
+
+.welcome {
+  text-align: center;
+  color: var(--color-welcome-text);
+}
+
+.welcome__buttons__container {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+button,
+input {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-button-text);
+  transition: background-color 0.3s;
+}
+
+button:hover,
+input:hover {
+  color: var(--color-button-text-hover);
+  background-color: var(--color-secondary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+li {
+  list-style: none;
+}
+
+.maindivwpm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#root {
+  width: 100%;
+}
+
+main {
+  padding: 1rem;
+}
+
+.wpm-rules {
+  border: 1px dashed var(--color-border);
+  max-width: 380px;
+  padding: 1rem;
+}
+
+.wpm-submit {
+  display: flex;
+  gap: 1rem;
+}
+
+.memotest-card {
+  cursor: pointer;
+  max=height: 120px;
+  max=width: 120px;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+}

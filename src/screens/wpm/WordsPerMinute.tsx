@@ -75,7 +75,7 @@ export default function WordsPerMinute() {
 
       {!time && (
         <div className="wpm-rules">
-          <p>
+          <div>
             Rules:
             <p>
               1. You have 60 seconds to type as many words as you can. Each
@@ -84,7 +84,7 @@ export default function WordsPerMinute() {
             <p>2. If you type the word correctly, you will get a new word.</p>
             <p>3. If you miss and submit, your try will be deleted.</p>
             <p>4. The game ends when the time is up.</p>
-          </p>
+          </div>
         </div>
       )}
       {Boolean(time) && <h1>{word}</h1>}

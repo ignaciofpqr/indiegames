@@ -6,6 +6,12 @@
   gap: 12px;
 }
 
+.wpm-rules {
+  border: 1px dashed var(--color-border);
+  max-width: 400px;
+  padding: 1rem;
+}
+
 .wpm-timeleft {
   margin: -10px;
 }
@@ -15,6 +21,34 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+}
+
+.wpm-input {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-button-text);
+  transition: border-color 0.3s, background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+/* Eliminar el outline por defecto del focus visible */
+.wpm-input:focus-visible {
+  outline: none;
+}
+
+/* Estilo del input cuando hay un error */
+.wpm-input.input-error {
+  border-color: red;
+}
+
+/* Asegurarse de que el borde rojo se mantenga incluso cuando el input tiene el foco */
+.wpm-input.input-error:focus {
+  border-color: red;
 }
 
 .wpm-buttons {

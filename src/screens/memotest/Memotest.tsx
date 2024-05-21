@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
+import "./Memotest.css";
 
 const IMAGES = [
   "https://icongr.am/devicon/redhat-original.svg?size=128&color=currentColor",
@@ -87,14 +88,14 @@ export default function Memotest() {
       </div>
       <Button
         style={{
-          fontSize: "12px",
-          width: "140px",
+          fontSize: "14px",
+          width: "160px",
           marginTop: "40px",
         }}
         onClick={() => navigate("/")}
       >
         {" "}
-        Back to main!{" "}
+        Back to main
       </Button>
     </div>
   );

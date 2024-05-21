@@ -13,6 +13,7 @@ export default function WordsPerMinute() {
   const [buffer, setBuffer] = useState("");
   const [time, setTime] = useState(0);
   const [scoreIncrement, setScoreIncrement] = useState(0);
+  const [inputError, setInputError] = useState(false);
   const [highScore, setHighScore] = useState(() => {
     const savedHighScore = localStorage.getItem("highScore");
     return savedHighScore ? parseInt(savedHighScore, 10) : 0;
@@ -29,6 +30,9 @@ export default function WordsPerMinute() {
       );
       setScoreIncrement(word.length);
       setTimeout(() => setScoreIncrement(0), 800);
+    } else {
+      setInputError(true);
+      setTimeout(() => setInputError(false), 400);
     }
     setBuffer("");
   }
@@ -46,6 +50,10 @@ export default function WordsPerMinute() {
       return () => clearTimeout(timeout);
     }
   }, [time]);
+
+  useEffect(() => {
+    localStorage.setItem("highScore", highScore.toString());
+  }, [highScore]);
 
   function resetScore() {
     setCharacterCount(0);
@@ -81,14 +89,14 @@ export default function WordsPerMinute() {
       )}
       {Boolean(time) && <h1>{word}</h1>}
       {time ? (
-        <div className="wpm-submit">
+        <div>
           <form onSubmit={handleSubmit}>
             <input
               autoFocus
               value={buffer}
               type="text"
               onChange={(e) => setBuffer(e.target.value)}
-              className="wpm-input"
+              className={`wpm-input ${inputError ? "input-error" : ""}`}
             />
           </form>
         </div>
@@ -138,12 +146,13 @@ export default function WordsPerMinute() {
       </div>
       <Button
         style={{
-          fontSize: "12px",
-          width: "140px",
+          fontSize: "14px",
+          width: "160px",
+          marginTop: "40px",
         }}
         onClick={() => navigate("/")}
       >
-        Back to main!
+        Back to main
       </Button>
     </div>
   );

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { WORDS } from "./Words";
 import Button from "../../components/Button";
-import "./WordsPerMinute.css";
+import "./wordsPerMinute.css";
 
 export default function WordsPerMinute() {
   const navigate = useNavigate();

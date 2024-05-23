@@ -9,8 +9,7 @@ export default function Welcome() {
       <h2>Hey, Nacho here. Welcome.</h2>
       <p>
         This is just a warm-up app. No need for fancy CSS or complex logic. The
-        goal is simply to shake off the rust. You won't find best practices
-        here—just a quick and dirty way to get back into the groove.
+        goal is simply get back into the groove. Have fun!
       </p>
       <div className="welcome__buttons__container">
         <Button onClick={() => navigate("/wpm")}>Go to Words Per Minute</Button>

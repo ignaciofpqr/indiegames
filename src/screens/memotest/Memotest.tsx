@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
-import "./memotest.css";
+import "../memotest/memotest.css";
 
 const IMAGES = [
   "https://icongr.am/devicon/redhat-original.svg?size=128&color=currentColor",

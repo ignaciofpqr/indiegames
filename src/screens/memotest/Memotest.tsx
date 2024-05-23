@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
-import "./Memotest.css";
+import "./memotest.css";
 
 const IMAGES = [
   "https://icongr.am/devicon/redhat-original.svg?size=128&color=currentColor",
@@ -39,25 +39,10 @@ export default function Memotest() {
   }, [guessed]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
+    <div className="memotest-container">
       <h1>Memotest</h1>
 
-      <div
-        style={{
-          width: "60vmin",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(100px, 1fr))",
-          marginTop: "24px",
-          gap: "24px",
-        }}
-      >
+      <div className="memotest-grid">
         {IMAGES.map((image) => {
           const [, url] = image.split("|");
           return (

@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Memotest from "./screens/memotest/Memotest";
 import WordsPerMinute from "./screens/wpm/WordsPerMinute";
-import Welcome from "./screens/Welcome";
+import Welcome from "./screens/welcome/Welcome";
 
 function App() {
   return (

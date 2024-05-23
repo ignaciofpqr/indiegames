@@ -9,33 +9,15 @@ export default function WordsPerMinute() {
   const [word, setWord] = useState(
     () => WORDS[Math.floor((Math.random() * WORDS.length) | 0)]
   );
-  const [characterCount, setCharacterCount] = useState(0);
   const [buffer, setBuffer] = useState("");
-  const [time, setTime] = useState(0);
-  const [scoreIncrement, setScoreIncrement] = useState(0);
+  const [characterCount, setCharacterCount] = useState(0);
   const [inputError, setInputError] = useState(false);
+  const [scoreIncrement, setScoreIncrement] = useState(0);
+  const [time, setTime] = useState(0);
   const [highScore, setHighScore] = useState(() => {
     const savedHighScore = localStorage.getItem("highScore");
     return savedHighScore ? parseInt(savedHighScore, 10) : 0;
   });
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (buffer === word) {
-      setWord(WORDS[Math.floor((Math.random() * WORDS.length) | 0)]);
-      setTimeout(
-        () =>
-          setCharacterCount((characterCount) => characterCount + word.length),
-        803
-      );
-      setScoreIncrement(word.length);
-      setTimeout(() => setScoreIncrement(0), 800);
-    } else {
-      setInputError(true);
-      setTimeout(() => setInputError(false), 400);
-    }
-    setBuffer("");
-  }
 
   useEffect(() => {
     if (time === 0 && characterCount > highScore) {
@@ -54,6 +36,24 @@ export default function WordsPerMinute() {
   useEffect(() => {
     localStorage.setItem("highScore", highScore.toString());
   }, [highScore]);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (buffer === word) {
+      setWord(WORDS[Math.floor((Math.random() * WORDS.length) | 0)]);
+      setTimeout(
+        () =>
+          setCharacterCount((characterCount) => characterCount + word.length),
+        803
+      );
+      setScoreIncrement(word.length);
+      setTimeout(() => setScoreIncrement(0), 800);
+    } else {
+      setInputError(true);
+      setTimeout(() => setInputError(false), 400);
+    }
+    setBuffer("");
+  }
 
   function resetScore() {
     setCharacterCount(0);

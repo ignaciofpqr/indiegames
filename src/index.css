@@ -5,6 +5,7 @@
   --font-size: 16px;
   --color-text: rgba(255, 255, 255, 0.87);
   --color-welcome-text: #e5e5e5;
+
   --color-bg: #121212;
   --color-primary: transparent;
   --color-secondary: #53fc18;
@@ -13,12 +14,6 @@
   --color-button-text-hover: #000;
   --color-button: #b2aeae;
 
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  line-height: 1.5;
-  font-weight: 400;
-  color: var(--color-text);
-  background-color: var(--color-bg);
   font-synthesis: none;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,60 +25,24 @@
 }
 
 body {
-  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  margin: 0;
+
   font-family: var(--font-family);
   font-size: var(--font-size);
+  color: var(--color-text);
+
+  background-color: var(--color-bg);
 }
 
 .container {
   width: 100%;
-  max-width: 610px;
-  padding: 16px;
+  max-width: 600px;
   margin: auto;
-}
 
-.welcome {
-  text-align: center;
-  color: var(--color-welcome-text);
-}
-
-.welcome__buttons__container {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 24px;
-}
-
-button {
-  font-family: var(--font-family);
-  font-size: 1rem;
-  padding: 10px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: var(--color-primary);
-  color: var(--color-button-text);
-  transition: background-color 0.3s;
-}
-
-button:hover,
-input:hover {
-  color: var(--color-button-text-hover);
-  background-color: var(--color-secondary);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-li {
-  list-style: none;
+  padding: 16px;
 }

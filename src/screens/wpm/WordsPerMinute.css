@@ -2,14 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   text-align: center;
+
   gap: 12px;
 }
 
 .wpm-rules {
-  border: 1px dashed var(--color-border);
   max-width: 400px;
   padding: 1rem;
+  border: 1px dashed var(--color-border);
 }
 
 .wpm-timeleft {
@@ -26,51 +28,59 @@
 .wpm-input {
   font-family: var(--font-family);
   font-size: 1rem;
+  color: var(--color-button-text);
+
   padding: 10px;
+  margin-bottom: 20px;
+
   border: 1px solid var(--color-border);
   border-radius: 4px;
-  cursor: pointer;
+
   background-color: var(--color-primary);
-  color: var(--color-button-text);
+
+  cursor: pointer;
   transition: border-color 0.3s, background-color 0.3s;
-  margin-bottom: 20px;
 }
 
-/* Eliminar el outline por defecto del focus visible */
+/* Remove default outline on focus-visible */
 .wpm-input:focus-visible {
   outline: none;
 }
 
-/* Estilo del input cuando hay un error */
+/* Input error style */
 .wpm-input.input-error {
   border-color: red;
 }
 
-/* Asegurarse de que el borde rojo se mantenga incluso cuando el input tiene el foco */
+/* Ensure red border remains when input is focused */
 .wpm-input.input-error:focus {
   border-color: red;
 }
 
 .wpm-buttons {
   display: flex;
+
   gap: 10px;
   margin-top: 10px;
 }
 
 .wpm-refresh {
-  padding-top: 2px;
-  height: 20px;
   width: 20px;
+  height: 20px;
+  padding-top: 2px;
 }
 
 .score-increment {
-  margin-left: 4px;
-  color: var(--color-secondary);
-  font-size: 1rem;
-  animation: fadeInUp 1s ease-in-out forwards;
   position: absolute;
   top: 0;
   right: -30px;
+
+  font-size: 1rem;
+  color: var(--color-secondary);
+
+  margin-left: 4px;
+
+  animation: fadeInUp 1s ease-in-out forwards;
 }
 
 @keyframes fadeInUp {
@@ -82,4 +92,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+input:hover {
+  color: var(--color-button-text-hover);
+
+  background-color: var(--color-secondary);
 }

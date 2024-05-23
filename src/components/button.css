@@ -1,10 +1,21 @@
 .button {
+  font-family: var(--font-family);
   font-size: var(--font-size);
-  cursor: pointer;
-  padding: 10px 20px;
-  background-color: transparent;
   color: var(--color-button);
+
+  padding: 10px 20px;
+
   border: 1px solid var(--color-border);
   border-radius: 4px;
   margin: auto;
+
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--color-button-text-hover);
+
+  background-color: var(--color-secondary);
 }

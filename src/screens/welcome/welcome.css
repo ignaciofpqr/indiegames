@@ -1,0 +1,12 @@
+.welcome {
+  text-align: center;
+  color: var(--color-welcome-text);
+}
+
+.welcome__buttons__container {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+
+  margin-top: 24px;
+}
